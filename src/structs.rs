@@ -2,45 +2,45 @@ pub type Identifier=String;
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct Shipping{
-	#[serde(rename="g:country")]
+	#[serde(rename="country")]
 	pub country:Option<String>,
-	#[serde(rename="g:price")]
+	#[serde(rename="price")]
 	pub price:Option<String>,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct Item{
-	#[serde(rename="g:id")]
+	#[serde(rename="id")]
 	pub id:Identifier,
 	pub title: String,
 	pub description: String,
-	#[serde(rename="g:google_product_category")]
+	#[serde(rename="google_product_category")]
 	pub google_product_id:String,
-	#[serde(rename="g:product_type")]
+	#[serde(rename="product_type")]
 	pub product_type:String,
 	pub link:String,
-	#[serde(rename="g:image_link")]
+	#[serde(rename="image_link")]
 	pub image:String,
-	#[serde(rename="g:additional_image_link")]
+	#[serde(rename="additional_image_link")]
 	pub additional_images:Vec<String>,
 	pub condition:Option<String>,
-	#[serde(rename="g:availability")]
+	#[serde(rename="availability")]
 	pub availability:Option<String>,
-	#[serde(rename="g:price")]
+	#[serde(rename="price")]
 	pub price:String,
-	#[serde(rename="g:sale_price")]
+	#[serde(rename="sale_price")]
 	pub sale_price:Option<String>,
-	#[serde(rename="g:brand")]
+	#[serde(rename="brand")]
 	pub brand:String,
-	#[serde(rename="g:color")]
+	#[serde(rename="color")]
 	pub color:Option<String>,
-	#[serde(rename="g:material")]
+	#[serde(rename="material")]
 	pub material:Option<String>,
-	#[serde(rename="g:size")]
+	#[serde(rename="size")]
 	pub size:Option<String>,
-	#[serde(rename="g:shipping")]
+	#[serde(rename="shipping")]
 	pub shipping:Option<Shipping>,
-	#[serde(rename="g:adult")]
+	#[serde(rename="adult")]
 	pub adult:Option<Shipping>,
 }
 
@@ -53,6 +53,7 @@ pub struct Channel{
 
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
+#[serde(rename="rss")]
 pub struct Feed{
 	#[serde(rename = "channel")]
 	pub channels:Vec<Channel>
