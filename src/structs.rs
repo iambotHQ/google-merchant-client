@@ -21,7 +21,7 @@ pub struct Item{
 	pub link:String,
 	#[serde(rename="image_link")]
 	pub image:String,
-	#[serde(rename="additional_image_link")]
+	#[serde(rename="additional_image_link",default)]
 	pub additional_images:Vec<String>,
 	pub condition:Option<String>,
 	#[serde(rename="availability")]
