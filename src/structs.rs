@@ -18,21 +18,22 @@ pub struct Item{
 	pub description: String,
 	#[serde(rename="google_product_category")]
 	pub google_product_id:String,
-	#[serde(rename="product_type")]
+	#[serde(default)]
 	pub product_type:String,
+	#[serde(default)]
 	pub link:String,
-	#[serde(rename="image_link")]
+	#[serde(rename="image_link",default)]
 	pub image:String,
 	#[serde(rename="additional_image_link",default)]
 	pub additional_images:Vec<String>,
 	pub condition:Option<String>,
 	#[serde(rename="availability")]
 	pub availability:Option<String>,
-	#[serde(rename="price")]
+	#[serde(rename="price",default)]
 	pub price:String,
 	#[serde(rename="sale_price")]
 	pub sale_price:Option<String>,
-	#[serde(rename="brand")]
+	#[serde(rename="brand",default)]
 	pub brand:String,
 	#[serde(rename="color")]
 	pub color:Option<String>,
