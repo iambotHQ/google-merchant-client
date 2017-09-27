@@ -12,7 +12,9 @@ pub struct Shipping{
 pub struct Item{
 	#[serde(rename="id")]
 	pub id:Identifier,
+	#[serde(default)]
 	pub title: String,
+	#[serde(default)]
 	pub description: String,
 	#[serde(rename="google_product_category")]
 	pub google_product_id:String,
